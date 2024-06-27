@@ -97,11 +97,12 @@ program
       {
         const [key, value] = options.set.split('=');
         const config = fs.readJsonSync(configPath);
+        const keys = key.split('.');
         let obj = config;
 
-        while (key.length > 1)
+        while (keys.length > 1)
         {
-          const k = key.shift();
+          const k = keys.shift();
           obj = obj[k] = obj[k] || {};
         }
 
@@ -245,7 +246,8 @@ Examples:
   $ myapp token --upd-phone <username-phone> Update user phone number for a given username
   $ myapp token --search-username <username>  Search for a token by username
   $ myapp token --search-email <email>        Search for a token by email
-  $ myapp token --search-phone <phone>        Search for a token by phone number`);
+  $ myapp token --search-phone <phone>        Search for a token by phone number
+`);
 });
 
 program.parse(process.argv);

@@ -1,6 +1,9 @@
 CLI WebApp Help:
+
+Usage: cli [command] [options]
+
 Commands:
-  init                  Initialize the application
-  config                Manage configuration
-  token                 Manage tokens
+  init [options]        Initialize the application
+  config [options]      Manage configuration
+  token [options]       Manage tokens
   help [command]        display help for command
